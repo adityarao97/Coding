@@ -19,7 +19,7 @@ static void fnInsertAtPosition(int data,int position){
     if(position==1){
         newNode.next=head;
         head=newNode;
-    }
+    }   
     else{
         cur=head;
         prev=head;
