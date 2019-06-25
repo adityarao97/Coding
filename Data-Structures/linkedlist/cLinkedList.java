@@ -5,7 +5,6 @@ class node{
     node next;
     node(int data){
         this.data=data;
-        this.next=this.next;
     }
 }
 
@@ -25,13 +24,14 @@ class cLinkedList{
             System.out.println(cur.data);
             cur=cur.next;
             count++;
-        }while(cur.next!=head);
+        }while(cur!=head);
         System.out.println("Total no of elements of List are : " + count);
     }
 
     static void fnInsertAtEnd(int data){
         node cur,newNode;
         newNode = new node(data);
+        newNode.next=newNode;
         if(head==null){
             head=newNode;
             return;
@@ -47,6 +47,7 @@ class cLinkedList{
     static void fninsertAtFront(int data){
         node first,cur,newNode;
         newNode = new node(data);
+        newNode.next=newNode;
         if(head==null){
             head=newNode;
             return;
@@ -58,6 +59,7 @@ class cLinkedList{
         }while(cur.next!=head);
         cur.next=newNode;
         newNode.next=first;
+        head=newNode;
     }
 
     static void fnDeleteLastNode(){
@@ -90,7 +92,7 @@ class cLinkedList{
         do{
             cur=cur.next;
         }while(cur.next!=head);
-        if(head.next!=null){
+        if(head.next!=head){
             head=head.next;
             cur.next=head;
         }
@@ -114,9 +116,9 @@ class cLinkedList{
                         data=scanner.nextInt();
                         fnInsertAtEnd(data);
                         break;
-                case 3: fnDeleteLastNode();
+                case 3: fnDeleteFirstNode();
                         break;
-                case 4: fnDeleteFirstNode();
+                case 4: fnDeleteLastNode();
                         break;
                 case 5: fnDisplay();
                         break;
