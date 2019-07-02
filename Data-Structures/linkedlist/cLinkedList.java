@@ -10,7 +10,6 @@ class node{
 
 class cLinkedList{
     public static node head;
-
     static void fnDisplay(){
         node cur;
         int count=0;
