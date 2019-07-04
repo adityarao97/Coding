@@ -1,9 +1,12 @@
-class Test{
-    public static void main(String[] args) {
-        String text = "Hello";
-        for(int i=0;i!=(text.length()+1);i++){
-            System.out.println(text.substring(0,i));
-        }
-        // System.out.println(text.substring(1,1));
+import java.util.*;
+
+class Test {
+    
+    public static void main(String args[] ) throws Exception {
+
+        Scanner scanner = new Scanner(System.in);
+        String x = scanner.nextLine();
+        String[] temp = x.split(" ");
+        System.out.println(Integer.parseInt(temp[0]));
     }
 }
